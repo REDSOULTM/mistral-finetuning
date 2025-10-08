@@ -26,7 +26,7 @@ def guardar_cotizacion(state: Dict[str, Any]) -> None:
         handle.flush()
         os.fsync(handle.fileno())
     os.replace(tmp_path, COTIZACIONES_FILE)
-    print(f"\nTransporte Miramar: 📁 Cotización guardada en {COTIZACIONES_FILE}")
+    # El mensaje de guardado se maneja en el flujo principal, no aquí
 
 
 __all__ = ["guardar_cotizacion"]

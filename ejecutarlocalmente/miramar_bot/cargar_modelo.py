@@ -37,8 +37,8 @@ def _get_optimal_vram_config():
         return {
             "max_seq_length": 2048,  # AUMENTADO para manejar prompts largos
             "gpu_memory_utilization": 0.75,  # MODERADO para balance
-            "max_num_seqs": 24,  # MODERADO para balance
-            "max_num_batched_tokens": 1024
+            "max_num_seqs": 16,  # REDUCIDO para menor latencia individual (de 24 a 16)
+            "max_num_batched_tokens": 896  # Optimizado para velocidad (de 1024 a 896)
         }
     elif vram_gb >= 10:  # RTX 3060 Ti 12GB, RTX 4070
         return {

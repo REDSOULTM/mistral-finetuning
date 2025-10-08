@@ -10,22 +10,15 @@ import os
 # Configuración de entorno
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-print("🚀 Iniciando Bot de Transportes Miramar...")
-print("=" * 60)
-
 
 def chat_interactivo():
     """Inicia el chat interactivo con el modelo LLM."""
-    print("\n💬 MODO CHAT INTERACTIVO")
-    print("Escribe 'exit' para salir")
-    print("-" * 60)
-    
     try:
         # Importar el sistema principal desde miramar_bot
         from miramar_bot import main
         
-        # Iniciar chat (usa el variant por defecto que es optimizado)
-        main()
+        # Iniciar chat con el variant por defecto (lora_4bit con torch.compile)
+        main(model_variant="lora_4bit")
         
     except Exception as e:
         print(f"❌ Error al iniciar chat: {e}")
@@ -172,6 +165,9 @@ def main() -> None:
     )
     
     args = parser.parse_args()
+    
+    # Banner inicial
+    print("🚀 Iniciando sistema de Transportes Miramar...")
     
     # Mostrar información del sistema si se solicita
     if args.info:

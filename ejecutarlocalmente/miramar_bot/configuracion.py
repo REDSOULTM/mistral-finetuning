@@ -26,12 +26,13 @@ ENABLE_PERSONAL_REGISTRATION = False
 # Configuración ULTRA-OPTIMIZADA para MÁXIMA VELOCIDAD
 LLM_SAMPLING_KWARGS: Dict[str, Any] = {
     "temperature": 0.7,
-    "top_p": 0.9,
-    "top_k": 30,           # REDUCIDO para velocidad
+    "top_p": 0.95,         # Aumentado ligeramente para mejor calidad sin penalización
+    "top_k": 20,           # REDUCIDO más para mayor velocidad (de 30 a 20)
     "do_sample": True,
-    "repetition_penalty": 1.05,
-    "max_new_tokens": 30,  # DRÁSTICAMENTE REDUCIDO para máxima velocidad
+    "repetition_penalty": 1.03,  # REDUCIDO para velocidad (de 1.05 a 1.03)
+    "max_new_tokens": 80,  # Suficiente para respuestas completas
     "use_cache": True,     # Cache incremental habilitado
+    "num_beams": 1,        # Forzar greedy-like para velocidad
 }
 
 COMMENT_FIELD = "comentario adicional"

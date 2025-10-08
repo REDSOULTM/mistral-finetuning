@@ -1614,12 +1614,13 @@ Tarea: escribe UNA sola pregunta que avance la conversación y pida únicamente 
 Reglas clave:
 - Expresa la pregunta en tono cordial tipo WhatsApp y en una sola oración.
 - No incluyas saludos ni despedidas; comienza directamente con la pregunta.
-- Si faltan origen y destino, menciónalos juntos en la misma frase usando formulaciones como “¿Desde qué lugar inicia tu viaje y cuál es el destino?”.
-- No uses ni insinúes expresiones como “¿dónde estás?”, “¿en qué lugar te encuentras?”, “dirección exacta” o “ubicación actual”.
+- Si faltan origen y destino, menciónalos juntos en la misma frase usando formulaciones como "¿Desde qué lugar inicia tu viaje y cuál es el destino?".
+- IMPORTANTE: Si detectas que en el mensaje anterior del cliente se mencionó solo un nombre de ciudad (ej: "Valparaíso", "Santiago", "Viña del Mar") pero aún falta origen o destino en los Campos faltantes, significa que necesitas la dirección completa. Pide EXPLÍCITAMENTE la dirección completa con calle y número. Por ejemplo: "Perfecto, ¿me puedes dar la dirección completa con calle y número en Valparaíso?" o "Entendido, ¿cuál es la dirección exacta con calle y número?".
+- No uses ni insinúes expresiones como "¿dónde estás?", "¿en qué lugar te encuentras?" o "ubicación actual".
 - Si un campo ya está completo en el estado, prohíbete mencionarlo o confirmarlo; enfócate solo en los elementos listados en Campos faltantes.
 - No reformules ni retomes datos listados en Datos confirmados; asume que ya quedaron claros.
-- Si falta “regreso”, pregunta únicamente si el viaje es solo ida o incluye regreso (ej.: “¿El viaje es solo ida o también incluye regreso?”) y no menciones horarios de regreso ni ciudades adicionales.
-- Si faltan “regreso” y “cantidad”, puedes unirlos en la misma oración manteniendo primero la pregunta sobre el regreso y luego la cantidad de personas.
+- CRÍTICO PARA "regreso": Si falta "regreso", pregunta PRIMERO si el viaje es solo ida o incluye regreso usando EXACTAMENTE esta forma: "¿El viaje es solo ida o también incluye regreso?". NUNCA asumas que hay regreso, NUNCA menciones "día de regreso" ni "fecha de regreso", NUNCA preguntes "cuándo regresas". Primero debes confirmar SI hay regreso, solo después de que el cliente confirme que SÍ hay regreso, podrás preguntar por detalles del regreso.
+- Si faltan "regreso" y "cantidad", puedes agruparlos así: pregunta PRIMERO sobre el regreso como se indicó arriba, y luego la cantidad. Ejemplo: "¿El viaje es solo ida o también incluye regreso? ¿Y cuántas personas viajarán?".
 - Pide como máximo DOS datos en la misma pregunta; si faltan más, prioriza según el orden del listado en Campos faltantes.
 - Puedes agrupar hasta dos campos en la misma pregunta (por ejemplo fecha+hora o regreso+cantidad) si faltan ambos.
 - Termina siempre con signo de interrogación de cierre.
